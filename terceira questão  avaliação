@@ -1,0 +1,52 @@
+
+3 – Após criar o modelo da questão número 2, elabora as
+instruções em SQL que atenderiam as seguintes demandas de consulta neste banco
+de dados:
+
+
+a)         Mostrar
+todos os cursos cadastrados no banco de dados;
+
+SELECT * FROM Avaliação.Curso;
+ 
+
+
+b)         Mostrar o
+nome e a carga horária de todas as disciplinas em ordem alfabética;
+
+
+ 
+SELECT Disciplina, Carga_H(h) FROM Avaliação.Disciplina ORDER BY Disciplina ASC;
+
+ 
+
+
+c)         Mostrar o
+nome do curso, o nome da disciplina e a carga horária de cada disciplina
+ordenando pelo nome do curso e sem seguida pelo nome da disciplina;
+
+
+ SELECT Curso, Disciplina, Carga_H(h) FROM Avaliaçao.Curso, Avaliação.Disciplina ORDER BY Curso, Disciplina ASC;
+
+
+d)         Mostrar
+somente as disciplinas de um determinado curso (escolha o nome de um curso para
+filtrar as disciplinas do mesmo);
+
+
+ SELECT * FROM Avaliaçao.Disciplina WHERE Disciplina.Curso_idCurso = 1;
+
+
+e)         Mostrar o
+nome do curso, o nome da disciplina e a carga horária de todas as disciplinas
+que possuem uma carga horária maior do que 40h;
+
+
+ SELECT Curso, Disciplina, Carga_H(h) FROM Avaliação.Curso, Avaliação.Disciplina WHERE Carga_H > 40;
+
+
+f)          Mostrar o
+nome da disciplina e o nome do curso a qual pertence para todas as disciplinas
+que possuem o texto “dados” dentro do nome da disciplina;
+
+SELECT Curso, Disciplina FROM Avaliação.Curso, Avaliação.Disciplina WHERE Disciplina LIKE % Dados %;
